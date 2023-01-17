@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            position: relative;
+            margin:0;
+            padding: 1%;
+        }
+        #person{
+            position: relative;
+            text-align:center;
+            height: 41px;
+            width: 400px;
+        }
+        #person>span{
+            position: relative;
+            background-color: rgb(98,147,241);
+            height: 40px;
+            width: 80px;
+            cursor: pointer;
+            display: inline-block;
+        }
+        #description{
+            position: relative;
+            height: 200px;
+            width: 395px;
+            right: -3px;
+            font-size: 30px;
+            background-color: rgb(130,210,238);
+        }
+    </style>
+</head>
+<body >
+    <div id="person">
+        <span style="float: left">海绵宝宝</span>
+        <span>派大星</span>
+        <span style="float: right">章鱼哥</span>
+    </div>
+    <div id="description">
+
+    </div>
+</body>
+<script>
+    let str1="是动画片《海绵宝宝》系列的主角，超级活泼可爱，给人带来快乐"
+    let str2="粉红色的海星，很可爱，和海绵宝宝交情最好"
+    let str3="大鼻子章鱼，对艺术有执着的追求本质上是一个善良且有正义感的章鱼"
+    let span=document.getElementsByTagName("span")
+    function changeColor(n)
+    {
+        for(let i=0;i<=2;i++)
+        {
+            if(n==i)span[i].style.backgroundColor="rgb(0,175,225)"
+            else span[i].style.backgroundColor="rgb(98,147,241)"
+        }
+    }
+    span[0].addEventListener("click",function(){
+        changeColor(0)
+        document.getElementById("description").innerHTML=str1
+    })
+    span[1].addEventListener("click",function(){
+        changeColor(1)
+        document.getElementById("description").innerHTML=str2
+    })
+    span[2].addEventListener("click",function(){
+        changeColor(2)
+        document.getElementById("description").innerHTML=str3
+    })
+</script>
+</html>
